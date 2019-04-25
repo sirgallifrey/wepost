@@ -1,0 +1,9 @@
+[package]
+name = "wepost"
+version = "0.0.1"
+authors = ["Adilson Schmitt Junior"]
+edition = "2018"
+
+[dependencies]
+serde = "1.0.90"
+clap = "2.33.0"
