@@ -70,7 +70,7 @@ pub fn execute_command<'a>(matches: &ArgMatches<'a>) {
 
     let mut path = PathBuf::from(output);
     path.push(&request_name);
-    path.set_extension("json");
+    path.set_extension("wepost.json");
 
     let data = match template {
         Templates::GET => {
@@ -83,7 +83,7 @@ pub fn execute_command<'a>(matches: &ArgMatches<'a>) {
         }
     };
 
-    let serialized = serde_json::to_string(&data).unwrap();
+    let serialized = serde_json::to_string_pretty(&data).unwrap();
 
     match fs::write(&path, &serialized) {
         //TODO: don't swallow this error, return back to main so we can exit with an error code.
