@@ -1,7 +1,10 @@
 #[macro_use]
 extern crate clap;
+extern crate serde;
+extern crate serde_json;
 use clap::{App};
 mod commands;
+mod entities;
 
 fn main() {
     let matches = App::new("WePost automating your requests")
